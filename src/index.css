@@ -1,0 +1,53 @@
+body {
+    padding: 1rem;
+    background-color: black;
+  }
+  
+  main {
+    display: grid;
+    gap: 1ch;
+  }
+  
+  @media (width>=500px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  h1 {
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  .roster {
+    color: white;
+    font-family: sans-serif;
+    font-size: large;
+  }
+  
+  .roster ul {
+    display: grid;
+    gap: 1ch;
+  
+    list-style-type: none;
+    padding: 0.25rem;
+  }
+  
+  .roster li {
+    padding: 1ch;
+    border-bottom: 1px solid grey;
+    max-width: 50%;
+  }
+  
+  .roster li:hover {
+    cursor: pointer;
+    font-style: italic;
+    background-color: rgb(76, 76, 76);
+    font-weight: bolder;
+  }
+  
+  .details {
+    padding: 0.25rem;
+    color: white;
+    font-family: sans-serif;
+  }
