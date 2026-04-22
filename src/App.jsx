@@ -1,6 +1,3 @@
-export default function App() {
-  // TODO
-}
 import { useState } from "react";
 import { episodeList } from "./data";
 
