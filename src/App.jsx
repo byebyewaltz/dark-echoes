@@ -5,6 +5,7 @@ export default function App() {
   const [episodes] = useState(episodeList);
   const [selectedEpisode, setSelectedEpisode] = useState();
 
+  /** Details about the selected episode */
   function EpisodeDetails() {
     if (!selectedEpisode) {
       return (
@@ -14,27 +15,32 @@ export default function App() {
         </section>
       );
     }
-
     return (
       <section className="details">
         <h2>Episode {selectedEpisode.id}</h2>
         <h3>{selectedEpisode.title}</h3>
         <p>{selectedEpisode.description}</p>
+        <button>Watch now</button>
       </section>
     );
   }
 
-  function Roster() {
+  /** A list of episode names that allows the user to select an episode */
+  function EpisodeList() {
     return (
-      <section className="roster">
+      <section className="episodes">
         <h2>Episodes</h2>
-        <ul className="roster">
+        <ol>
           {episodes.map((episode) => (
-            <li key={episode.id} onClick={() => setSelectedEpisode(episode)}>
+            <li
+              key={episode.id}
+              onClick={() => setSelectedEpisode(episode)}
+              className={selectedEpisode?.id === episode.id ? "selected" : ""}
+            >
               {episode.title}
             </li>
           ))}
-        </ul>
+        </ol>
       </section>
     );
   }
@@ -45,7 +51,7 @@ export default function App() {
         <h1>Dark Echoes</h1>
       </header>
       <main>
-        <Roster />
+        <EpisodeList />
         <EpisodeDetails />
       </main>
     </>
